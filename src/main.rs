@@ -1,7 +1,6 @@
-use std::fs::{write, File, OpenOptions};
-use std::io::{self, stdout, Read, Write};
+use std::fs::{File, OpenOptions};
+use std::io::{self, Read, Write};
 use std::path::Path;
-use std::task;
 
 fn main() {
     let mut todo = Todo::new("todo.txt");
@@ -80,7 +79,7 @@ impl Todo {
         };
 
         Todo {
-            tasks: tasks,
+            tasks,
             file_path: String::from(file_path),
         }
     }
